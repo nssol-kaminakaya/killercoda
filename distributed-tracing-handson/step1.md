@@ -24,7 +24,7 @@ docker-compose up -d
 ```{{exec}}
 
 
-4. すべてUp担っていることを確認する
+4. すべてUpであることを確認する
 
 ```bash
 docker-compose ps
