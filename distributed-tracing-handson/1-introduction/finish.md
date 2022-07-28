@@ -1,6 +1,6 @@
 
 <br>
 
-### Look at you, learning Linux!
+### お疲れさまでした！
 
-You solved this challenge!
+これでシナリオ1は終了です！
