@@ -41,3 +41,7 @@ otel-demoというサンプルアプリケーションを起動します。
     prometheus       /bin/prometheus --config.f ...   Up             ...
     zipkin           start-zipkin                     Up (healthy)   ...
     ```
+
+### 完了条件
+
+コンテナがすべて起動していることが確認出来たら次へ
