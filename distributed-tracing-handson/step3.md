@@ -1,17 +1,37 @@
+サンプルアプリケーションを停止する。
 
-Now we're getting serious! Delete the file `/var/dont-need-this.png`
+### 手順
 
-<br>
+1. サンプルアプリケーションを停止
 
-### Solution
-Check if the file is there using
+    ```bash
+    cd ~/otel-demo
+    docker-compose down
+    ```{{exec}}
 
-```plain
-ls /var/dont-need-this.png
-```{{exec}}
+    実行結果例
 
-Now to delete we run
+    ```plan
+    Stopping demo           ... done
+    Stopping otel-collector ... done
+    Stopping zipkin         ... done
+    Stopping prometheus     ... done
+    Stopping db             ... done
+    Stopping jaeger         ... done
+    Removing demo           ... done
+    Removing otel-collector ... done
+    Removing zipkin         ... done
+    Removing prometheus     ... done
+    Removing db             ... done
+    Removing jaeger         ... done
+    Removing network otel-demo_default
+    ```
 
-```plain
-rm /var/dont-need-this.png
-```{{exec}}
+1. 起動しているコンテナがないことを確認する
+
+    ```bash
+    docker-compose ps
+    ```{{exec}}
+### 完了条件
+
+コンテナがすべて停止していることが確認出来たら次へ
