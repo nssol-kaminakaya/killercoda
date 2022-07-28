@@ -12,9 +12,9 @@
 
 下記２つの画面が表示されたら次へ
 
-![ホーム画面](assets/app-home.png)
+![ホーム画面](./assets/app-home.png)
 
-![Jaegerトップ画面](assets/jaeger-top.png)
+![Jaegerトップ画面](./assets/jaeger-top.png)
 
 ### 参考
 
