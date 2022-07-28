@@ -1,47 +1,40 @@
-otel-demoというサンプルアプリケーションを起動します。
-既に`~/otel-demo`に配置されています。
+## モジュールのインストール
 
-<br>
+### 作業概要
 
-### 手順
+- OpenTelemetry を Spring Boot で使用するためのモジュールを入れる。
 
-1. ディレクトリの移動
+### 作業手順
 
-      ```bash
-      cd ~/otel-demo
-      ```{{exec}}
+- OpenTelemetry を使うために必要なモジュールを build.gralde に追加する。
+  - build.gradle の中の dependencies 欄の最後に追記する。
 
-1. ビルドする
+  ```java
+  // file: otel-demo/demo/build.gradle
+  dependencies {
 
-    ```bash
-    docker-compose build
-    ```{{exec}}
+    // 略
 
-1. サンプルアプリケーションを起動
+    // OpenTelemetry Base
+    implementation(platform("io.opentelemetry:opentelemetry-bom:1.11.0"))
+    implementation("io.opentelemetry:opentelemetry-api")
 
-    ```bash
-    docker-compose up -d
-    ```{{exec}}
+    // OpenTelemetry Collector
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp:1.11.0")
+    implementation("io.grpc:grpc-netty-shaded:1.41.0")
 
-1. すべてUpであることを確認する
+    // OpenTelemetrySdkAutoConfiguration
+    implementation("io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.11.0-alpha")
+  }
+  ```
 
-    ```bash
-    docker-compose ps
-    ```{{exec}}
+### 補足
 
-    実行結果例
-
-    ```plan
-        Name                   Command                  State       ...
-    -----------------------------------------------------------------...
-    db               docker-entrypoint.sh mysql ...   Up             ...
-    demo             java -Xmn256m -Xmx768m -ja ...   Up             ...
-    jaeger           /go/bin/all-in-one-linux         Up             ...
-    otel-collector   /otelcontribcol --config=/ ...   Up             ...
-    prometheus       /bin/prometheus --config.f ...   Up             ...
-    zipkin           start-zipkin                     Up (healthy)   ...
-    ```
-
-### 完了条件
-
-コンテナがすべて起動していることが確認出来たら次へ
+- Java で使うために必要となるモジュール
+  - opentelemetry-bom
+  - opentelemetry-api
+- OTel Collector サービスを用いてバックエンドに送信するためのモジュール
+  - opentelemetry-exporter-otlp
+  - grpc-netty-shaded
+- SDK の自動設定を使う　※後述
+  - opentelemetry-sdk-extension-autoconfigure
