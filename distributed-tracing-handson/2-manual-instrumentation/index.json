@@ -1,6 +1,6 @@
 {
-  "title": "Manual Insturmentation",
-  "description": "Manual instrumentation with OpenTelemetry",
+  "title": "Distributed Tracing Handson",
+  "description": "Let's learn some basic commands to work with files on a Linux system",
   "details": {
     "intro": {
       "text": "intro.md",
