@@ -1,1 +1,1 @@
-Learn Distributed Tracing
+分散トレーシングの勉強を始めましょう。

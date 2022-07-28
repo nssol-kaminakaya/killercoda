@@ -1,23 +1,37 @@
-
-Create a new empty file called `my-new-file` in your home directory
+サンプルアプリケーションを起動していきましょう
 
 <br>
 
-### Solution
-First we make sure we're in our home directory using
+### 手順
 
-```plain
-cd ~
+ディレクトリの移動
+
+````bash
+cd ~/otel-demo
 ```{{exec}}
 
-We can list the current directory using
+ビルドする
 
-```plain
-pwd
+```bash
+docker-compose build
 ```{{exec}}
 
-Now we create the file
+サンプル AP を起動する
 
-```plain
-touch my-new-file
+```bash
+docker-compose up -d
 ```{{exec}}
+
+
+# State が Up 状態であることを確認する
+
+$ docker-compose ps
+      Name                   Command                  State       ...
+-----------------------------------------------------------------...
+db               docker-entrypoint.sh mysql ...   Up             ...
+demo             java -Xmn256m -Xmx768m -ja ...   Up             ...
+jaeger           /go/bin/all-in-one-linux         Up             ...
+otel-collector   /otelcontribcol --config=/ ...   Up             ...
+prometheus       /bin/prometheus --config.f ...   Up             ...
+zipkin           start-zipkin                     Up (healthy)   ...
+````
