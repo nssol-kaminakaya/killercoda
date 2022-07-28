@@ -4,7 +4,7 @@
 
 ### Solution
 
-````bash
+```bash
 cd ~/otel-demo
 ```{{exec}}
 
@@ -34,4 +34,3 @@ otel-collector   /otelcontribcol --config=/ ...   Up             ...
 prometheus       /bin/prometheus --config.f ...   Up             ...
 zipkin           start-zipkin                     Up (healthy)   ...
 ```
-````
