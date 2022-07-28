@@ -4,6 +4,8 @@
   - OpenTelemetry を Spring Boot で使用するためのモジュールを入れる。
 
 - 作業手順
+  - Editorを使って下記ファイルを開く
+    - `otel-demo/demo/build.gradle`
   - OpenTelemetry を使うために必要なモジュールを build.gralde に追加する。
     - build.gradle の中の dependencies 欄の最後に追記する。
 
