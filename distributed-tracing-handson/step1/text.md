@@ -1,30 +1,38 @@
-サンプルアプリケーションを起動していきましょう
+otel-demoというサンプルアプリケーションを起動します。
+既に`~/otel-demo`に配置されています。
 
 <br>
 
-### Solution
+### 手順
+
+1. ディレクトリの移動
 
 ```bash
 cd ~/otel-demo
 ```{{exec}}
 
-Build
+2. ビルドする
 
 ```bash
 docker-compose build
 ```{{exec}}
 
-Run
+3. サンプルアプリケーションを起動
 
 ```bash
 docker-compose up -d
 ```{{exec}}
 
 
-# State が Up 状態であることを確認する
+4. すべてUp担っていることを確認する
 
 ```bash
-$ docker-compose ps
+docker-compose ps
+```{{exec}}
+
+実行結果例
+
+```plan
       Name                   Command                  State       ...
 -----------------------------------------------------------------...
 db               docker-entrypoint.sh mysql ...   Up             ...

@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "Create an empty file",
+        "title": "サンプルアプリケーションの起動",
         "text": "step1/text.md"
       },
       {
