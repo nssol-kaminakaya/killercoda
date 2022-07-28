@@ -1,6 +1,6 @@
 {
-  "title": "Manual Insturmentation",
-  "description": "Manual instrumentation with OpenTelemetry",
+  "title": "1. Starting and Stopping Sample Applications",
+  "description": "Let's get used to Killercoda by starting and stopping sample applications.",
   "details": {
     "intro": {
       "text": "intro.md",
