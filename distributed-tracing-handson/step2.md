@@ -1,17 +1,9 @@
 
-Create a new file `/etc/my-second-file` with content `amazing`
+サンプルアプリケーションにアクセス
 
 <br>
 
-### Solution
-We can use the command `echo`:
 
-```plain
-echo amazing > /etc/my-second-file
-```{{exec}}
+[8080ポートでアクセスする]({{TRAFFIC_HOST1_8080}}/home)
 
-And to verify we can run
-
-```plain
-cat /etc/my-second-file
-```{{exec}}
+[こちらからポートを指定してアクセスすることもできる]({{TRAFFIC_SELECTOR}})
