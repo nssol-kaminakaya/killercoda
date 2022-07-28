@@ -2,21 +2,19 @@
 
 <br>
 
-### 手順
-
-ディレクトリの移動
+### Solution
 
 ````bash
 cd ~/otel-demo
 ```{{exec}}
 
-ビルドする
+Build
 
 ```bash
 docker-compose build
 ```{{exec}}
 
-サンプル AP を起動する
+Run
 
 ```bash
 docker-compose up -d
@@ -25,6 +23,7 @@ docker-compose up -d
 
 # State が Up 状態であることを確認する
 
+```bash
 $ docker-compose ps
       Name                   Command                  State       ...
 -----------------------------------------------------------------...
@@ -34,4 +33,5 @@ jaeger           /go/bin/all-in-one-linux         Up             ...
 otel-collector   /otelcontribcol --config=/ ...   Up             ...
 prometheus       /bin/prometheus --config.f ...   Up             ...
 zipkin           start-zipkin                     Up (healthy)   ...
+```
 ````
