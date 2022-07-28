@@ -1,21 +1,50 @@
-### 手順
+## OpenTelemetryインスタンスの生成
 
-1. [サンプルアプリケーションにアクセスする]({{TRAFFIC_HOST1_8080}}/home)
-   - ポートは8080
-   - パス : <https://{ホスト名}/home>
-   - 502 Bad Gatewayが表示された場合は少し時間をあけて再読み込み
+- 作業概要
+  - Trace を取得するためには、SDK を用いてグローバルに 1 つだけの OpenTelemetry インスタンスを生成する必要がある。
+    - このインスタンスによって Tracer を生成することができる。
+  - メインクラスの中に OpenTelemery インスタンスを生成する。
+- 作業手順
+  - Editorで下記ファイルを開く。
+    - `otel-demo/demo/src/main/java/com/example/demo/DemoApplication.java`
+  - DemoApplication.java の中に 下記のように修正して保存する。
+    - import 文 3 行追加
+    - initOpentelemetry メソッドを追加
 
-2. [Jager画面にアクセスする]({{TRAFFIC_HOST1_16686}})
-   - ポートは16686
+  ```java
+  // file: otel-demo/demo/src/main/java/com/example/demo/DemoApplication.java
 
-### 完了条件
+  // import文を3行追加
+  import org.springframework.context.annotation.Bean;
+  import io.opentelemetry.api.OpenTelemetry;
+  import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
 
-下記２つの画面が表示されたら次へ
+  @SpringBootApplication
+  public class DempApplication {
 
-![ホーム画面](assets/app-home.png)
+    public static void main(String[] args) {
+      SpringApplication.run(DemoApplication.class, args);
+    }
 
-![Jaegerトップ画面](assets/jaeger-top.png)
+    // 下記を追記
+    @Bean
+    public static OpenTelemetry initOpenTelemetry() {
+      OpenTelemetry openTelemetry = AutoConfiguredOpenTelemetrySdk.initialize().getOpenTelemetrySdk();
+      return openTelemetry;
+    }
+  }
+  ```
 
-### 参考
-
-Logoutボタンの下にあるハンバーガーメニュー（3本線）をクリックして、「Traffic / Ports」を選択すると、ポートを指定したアクセスが可能
+- 補足
+  - 今回は`AutoConfiguredOpenTelemetrySdk`を使用する。
+    - バックエンドの出力先など最低限の設定を環境変数やシステムプロパティで簡単に行える。
+    - サンプリングなどのその他の設定を自動でやってくれる。
+    - 各設定値を細かく指定したい場合は`OpenTelemetrySdk`を使う。
+  - 環境変数については`docker-compose.yml`の中で既に設定されている。
+    - `OTEL_EXPORTER_OTLP_ENDPOINT`
+      - OTel コレクタインスタンスの出力先
+      - 使用するエクスポータによって環境変数名が異なるので注意。
+    - `OTEL_SERVICE_NAME`
+      - 毎回サービス名を設定するのを省略するため、事前にサービス名を設定しておく。
+      - ここで指定したサービス名でバックエンドは検出する。
+    - 他に設定できる環境変数を知りたい方は[こちら](https://github.com/open-telemetry/opentelemetry-java/blob/main/sdk-extensions/autoconfigure/README.md)
