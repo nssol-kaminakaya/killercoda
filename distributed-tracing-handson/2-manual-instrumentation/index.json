@@ -9,31 +9,31 @@
     "steps": [
       {
         "title": "前半：Root Spanを取得する(1)",
-        "text": "step1.md"
+        "text": "step1-1.md"
       },
       {
         "title": "前半：Root Spanを取得する(2)",
-        "text": "step2.md"
+        "text": "step1-2.md"
       },
       {
         "title": "前半：Root Spanを取得する(3)",
-        "text": "step3.md"
+        "text": "step1-3.md"
       },
       {
         "title": "前半：Root Spanを取得する(4)",
-        "text": "step4.md"
+        "text": "step1-4.md"
       },
       {
         "title": "前半：Root Spanを取得する(5)",
-        "text": "step5.md"
+        "text": "step1-5.md"
       },
       {
         "title": "前半：Root Spanを取得する(6)",
-        "text": "step6.md"
+        "text": "step1-6.md"
       },
       {
         "title": "前半：Root Spanを取得する(7)",
-        "text": "step7.md"
+        "text": "step1-7.md"
       }
     ],
     "finish": {
