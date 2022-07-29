@@ -11,7 +11,7 @@
 ```java
 // file: otel-demo/demo/src/main/java/com/example/demo/controller/HomeController.java
 
-// 課題1で追加済み
+// import文追加
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
