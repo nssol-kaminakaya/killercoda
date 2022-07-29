@@ -3,6 +3,8 @@
 - 作業概要
   - ユーザ一覧画面へ遷移するメソッドに監視コードを埋め込む
 - 作業手順
+  - Editorで下記ファイルを開く。
+    - `otel-demo/demo/src/main/java/com/example/demo/controller/HomeController.java`
   - HomeController.java に下記を追加
     - import 文を3行追加
     - Tracer や Span を定義する
