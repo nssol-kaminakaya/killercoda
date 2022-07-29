@@ -1,5 +1,14 @@
 {
   "prettier.arrowParens": "avoid",
   "prettier.enable": false,
-  "prettier.embeddedLanguageFormatting": "off"
+  "prettier.embeddedLanguageFormatting": "off",
+  "markdown.extension.list.indentationSize": "inherit",
+  "[markdown]": {
+    "editor.tabSize": 4
+  },
+  "prettier.tabWidth": 4,
+  "markdownlint.config": {
+      "default": true,
+      "MD007": { "indent": 4}
+  }
 }
