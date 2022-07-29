@@ -38,6 +38,10 @@
       {
         "title": "後半イントロ",
         "text": "intro2.md"
+      },
+      {
+        "title": "後半：Nested Spanを取得する(1)",
+        "text": "step2-1.md"
       }
     ],
     "finish": {
