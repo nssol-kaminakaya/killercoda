@@ -20,4 +20,4 @@
         ![getUserList詳細](./assets/jaeger-getUserList-detail.png)
 
 - 補足
-    - ログイン・ログアウトを何回も実行すると Span が複数溜まっていくので確認してみてください。
+    - ユーザ一覧画面に何回かアクセスすると Span が複数溜まっていくので確認してみてください。
