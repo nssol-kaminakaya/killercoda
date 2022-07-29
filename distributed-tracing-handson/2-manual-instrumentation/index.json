@@ -3,7 +3,7 @@
   "description": "Manual instrumentation with OpenTelemetry",
   "details": {
     "intro": {
-      "text": "intro.md",
+      "text": "intro1.md",
       "background": "setup.sh"
     },
     "steps": [
@@ -34,6 +34,10 @@
       {
         "title": "前半：Root Spanを取得する(7)",
         "text": "step1-7.md"
+      },
+      {
+        "title": "後半イントロ",
+        "text": "intro2.md"
       }
     ],
     "finish": {
