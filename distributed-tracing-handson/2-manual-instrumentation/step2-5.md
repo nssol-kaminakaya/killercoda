@@ -9,12 +9,8 @@
         - spring-demo は環境変数で設定した値である。
         ![サービス検索](./assets/jaeger-login.png)
     - spring-demo サービスの getUserList Trace が表示される。
-        - 上のグラフ上には各 Span の実行時間が分布図として表示される。
-        - getUserList は監視コードを埋め込む手順のポイント 3 で設定した値である。
         ![getUserList](./assets/jaeger-getUserList.png)
-    - getUserList Trace をクリックすると、詳細が表示され、ルート Span を確認できる。
-        - 折りたたまれていたらそれぞれをクリックして広げることができる。
-        - Tags の中にライブラリ名・バージョンが設定した値で表示されている。
-        - Tags の中に監視コードを埋め込む手順のポイント 2 で設定したライブラリのバージョンが表示される。
-        - Tags の中に監視コードを埋め込む手順のポイント 4 で設定した http.method や http.url が表示される。
+    - getUserList Trace をクリックすると、詳細が表示され、Span を確認できる
+        - getUserList Span の下に userServiceSelectMany Span ができている。
+        - userServiceSelectMany Span の Tags に設定した SQL が表示されている。
         ![getUserList詳細](./assets/jaeger-getUserList-nested.png)

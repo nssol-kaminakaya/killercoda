@@ -25,7 +25,7 @@
 
         // 前半で追加済み
         @Autowired
-        private OpenTelemetry openTelemetry; // ポイント1
+        private OpenTelemetry openTelemetry;
 
         // 省略
 
