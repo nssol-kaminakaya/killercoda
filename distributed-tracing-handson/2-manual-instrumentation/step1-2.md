@@ -48,3 +48,19 @@
             - 毎回サービス名を設定するのを省略するため、事前にサービス名を設定しておく。
             - ここで指定したサービス名でバックエンドは検出する。
         - 他に設定できる環境変数を知りたい方は[こちら](https://github.com/open-telemetry/opentelemetry-java/blob/main/sdk-extensions/autoconfigure/README.md)
+
+    ```yaml
+    # otel-demo/docker-compose.yaml
+    version: "3"
+
+    services:
+        demo:
+            # 省略
+            environment:
+                spring.datasource.driverClassName: "com.mysql.cj.jdbc.Driver"
+                spring.datasource.url: "jdbc:mysql://db:3306/demo"
+                spring.datasource.username: "mysql"
+                spring.datasource.password: "mysql"
+                OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4317
+                OTEL_SERVICE_NAME: spring-demo
+    ```
