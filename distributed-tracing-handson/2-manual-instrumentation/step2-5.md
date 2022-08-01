@@ -17,7 +17,4 @@
         - Tags の中にライブラリ名・バージョンが設定した値で表示されている。
         - Tags の中に監視コードを埋め込む手順のポイント 2 で設定したライブラリのバージョンが表示される。
         - Tags の中に監視コードを埋め込む手順のポイント 4 で設定した http.method や http.url が表示される。
-        ![getUserList詳細](./assets/jaeger-getUserList-detail.png)
-
-- 補足
-    - ユーザ一覧画面に何回かアクセスすると Span が複数溜まっていくので確認してみてください。
+        ![getUserList詳細](./assets/jaeger-getUserList-nested.png)
