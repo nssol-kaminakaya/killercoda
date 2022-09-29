@@ -14,7 +14,7 @@
     cd ~/microservices-demo
     ```{{exec}}
 
-1. サンプルアプリケーションを起動
+1. サンプルアプリケーションを起動 ※数分程度かかる
 
     ```bash
     docker-compose -f deploy/docker-compose/docker-compose.yml up -d
@@ -26,22 +26,13 @@
     docker-compose -f deploy/docker-compose/docker-compose.yml ps
     ```{{exec}}
 
-    実行結果例
-
-    ```plan
-        Name                   Command                  State       ...
-    -----------------------------------------------------------------...
-    db               docker-entrypoint.sh mysql ...   Up             ...
-    demo             java -Xmn256m -Xmx768m -ja ...   Up             ...
-    jaeger           /go/bin/all-in-one-linux         Up             ...
-    otel-collector   /otelcontribcol --config=/ ...   Up             ...
-    prometheus       /bin/prometheus --config.f ...   Up             ...
-    zipkin           start-zipkin                     Up (healthy)   ...
-    ```
-
 ## 画面へアクセス
 
 1. [サンプルアプリケーションにアクセスする]({{TRAFFIC_HOST1_80}})
+    - Traffic / Portsで80を指定して開いてもOKです。
+    - 普通のECサイトなので画面の説明は割愛します。
+
+![ホーム画面](./assets/sockshop-home.png)
 
 ## 停止
 

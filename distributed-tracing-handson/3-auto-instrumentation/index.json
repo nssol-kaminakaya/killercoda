@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "前半：Root Spanを取得する(1)",
+        "title": "サンプルアプリケーションの起動停止",
         "text": "step1.md"
       }
     ],
