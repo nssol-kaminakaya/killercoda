@@ -1,0 +1,22 @@
+{
+  "title": "3. Auto Insturmentation",
+  "description": "Manual instrumentation with INSTANA",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "setup.sh"
+    },
+    "steps": [
+      {
+        "title": "前半：Root Spanを取得する(1)",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
