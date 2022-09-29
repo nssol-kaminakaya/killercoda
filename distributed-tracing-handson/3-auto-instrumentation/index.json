@@ -10,6 +10,14 @@
       {
         "title": "サンプルアプリケーションの起動停止",
         "text": "step1.md"
+      },
+      {
+        "title": "INSTANAで自動計装(1)",
+        "text": "step2.md"
+      },
+      {
+        "title": "INSTANAで自動計装(2)",
+        "text": "step3.md"
       }
     ],
     "finish": {
