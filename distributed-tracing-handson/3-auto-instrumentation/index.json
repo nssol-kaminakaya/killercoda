@@ -8,8 +8,16 @@
     },
     "steps": [
       {
-        "title": "サンプルアプリケーションの起動",
+        "title": "自動計装を設定する(1)",
         "text": "step1.md"
+      },
+      {
+        "title": "自動計装を設定する(2)",
+        "text": "step2.md"
+      },
+      {
+        "title": "自動計装を設定する(3)",
+        "text": "step3.md"
       }
     ],
     "finish": {

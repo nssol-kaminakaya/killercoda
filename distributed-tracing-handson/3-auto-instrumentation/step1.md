@@ -1,43 +1,35 @@
-## 概要
+## 自動計装の設定
 
-- 本章ではマイクロサービスのサンプルアプリとして知られている Sock Shop というサンプルマイクロサービスアプリを使用する。
-- [こちら](https://github.com/microservices-demo/microservices-demo)からダウンロードできる。
-    - 既に環境にクローン済み
-- [HP](https://microservices-demo.github.io/)にデプロイ方法が説明されている。
-- ここではdocker-composeを用いてデプロイする。
+- 作業概要
+    - 自動計装用のエージェントをダウンロードしてアプリケーションフォルダへ配置する
+    - Dockerfileを修正してjavaagentを起動するように設定する
 
-## 起動
+- 作業手順
+    - JAVAエージェントをダウンロードする
 
-1. ディレクトリの移動
+        ```bash
+        wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+        ```{{exec}}
 
-    ```bash
-    cd ~/microservices-demo
-    ```{{exec}}
+    - JAVAエージェントをアプリケーションのフォルダへ移動する
 
-1. サンプルアプリケーションを起動 ※数分程度かかる
+        ```bash
+        mv opentelemetry-javaagent.jar ~/otel-demo/demo
+        ```{{exec}}
 
-    ```bash
-    docker-compose -f deploy/docker-compose/docker-compose.yml up -d
-    ```{{exec}}
+    - Editorで下記ファイルを開く。
+        - `otel-demo/demo/Dockerfile`
+    - Dockerfileの中に下記のように修正して保存する。
 
-1. すべてUpであることを確認する
+        ```docker
+        # otel-demo/demo/Dockerfile
+        # 変更前 (20行目)
+        ENTRYPOINT ["java", "-jar","/app/spring-boot-application.jar"]
 
-    ```bash
-    docker-compose -f deploy/docker-compose/docker-compose.yml ps
-    ```{{exec}}
+        # 変更後
+        # opentelemetry-javaagent.jarをアプリケーションJARと同じ階層に配置する
+        COPY opentelemetry-javaagent.jar /app
 
-## 画面へアクセス
-
-1. [サンプルアプリケーションにアクセスする]({{TRAFFIC_HOST1_80}})
-    - Traffic / Portsで80を指定して開いてもOKです。
-    - 普通のECサイトなので画面の説明は割愛します。
-
-![ホーム画面](./assets/sockshop-home.png)
-
-<!-- ## 停止
-
-1. サンプルアプリケーションを停止
-
-    ```bash
-    docker-compose -f deploy/docker-compose/docker-compose.yml down
-    ```{{exec}} -->
+        # javaの引数にオプションを追加する。
+        ENTRYPOINT ["java", "-javaagent:/app/opentelemetry-javaagent.jar", "-jar","/app/spring-boot-application.jar"]
+        ```
