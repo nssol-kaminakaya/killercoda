@@ -34,10 +34,10 @@
 
 ![ホーム画面](./assets/sockshop-home.png)
 
-## 停止
+<!-- ## 停止
 
 1. サンプルアプリケーションを停止
 
     ```bash
     docker-compose -f deploy/docker-compose/docker-compose.yml down
-    ```{{exec}}
+    ```{{exec}} -->

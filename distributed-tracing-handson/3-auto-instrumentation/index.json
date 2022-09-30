@@ -1,6 +1,6 @@
 {
   "title": "3. Auto Insturmentation",
-  "description": "Manual instrumentation with INSTANA",
+  "description": "Auto instrumentation with OpenTelemetry",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,16 +8,8 @@
     },
     "steps": [
       {
-        "title": "サンプルアプリケーションの起動停止",
+        "title": "サンプルアプリケーションの起動",
         "text": "step1.md"
-      },
-      {
-        "title": "INSTANAで自動計装(1)",
-        "text": "step2.md"
-      },
-      {
-        "title": "INSTANAで自動計装(2)",
-        "text": "step3.md"
       }
     ],
     "finish": {
