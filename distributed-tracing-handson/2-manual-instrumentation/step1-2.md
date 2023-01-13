@@ -20,7 +20,7 @@
     import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
 
     @SpringBootApplication
-    public class DempApplication {
+    public class DemoApplication {
 
         public static void main(String[] args) {
             SpringApplication.run(DemoApplication.class, args);
