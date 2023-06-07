@@ -3,8 +3,7 @@
   "description": "Let's get used to Killercoda by starting and stopping sample applications.",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "setup.sh"
+      "text": "intro.md"
     },
     "steps": [
       {
