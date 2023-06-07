@@ -1,6 +1,6 @@
 {
   "title": "Microservice Handson",
-  "description": "Let's get used to Killercoda by starting and stopping sample applications.",
+  "description": "Let's get microservices running with the opentelemetry-demo application!",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -9,8 +9,12 @@
     },
     "steps": [
       {
-        "title": "サンプルアプリケーションの起動",
+        "title": "前提条件の確認",
         "text": "step1.md"
+      },
+      {
+        "title": "サンプルアプリケーションの起動",
+        "text": "step2.md"
       }
     ],
     "finish": {
