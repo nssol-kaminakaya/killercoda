@@ -14,13 +14,23 @@
 
     ```bash
     cd opentelemetry-demo/
-    docker compose up --no-build
+    docker compose up -d
     ```{{exec}}
 
-1. 起動したことを確認する
+1. コンテナのstatusがすべてrunningになっていることを確認する
 
     ```bash
     docker compose ps
     ```{{exec}}
 
-コンテナがすべて起動していることが確認出来たら次へ
+1. kafkaコンテナの起動が遅くてstatusがcreatedで止まってしまっている場合はstartを実行する
+
+    ```bash
+    docker compose start
+    ```{{exec}}
+
+1. コンテナのstatusがすべてrunningになっていることを確認して次へ
+
+    ```bash
+    docker compose ps
+    ```{{exec}}
