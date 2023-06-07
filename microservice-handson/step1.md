@@ -19,7 +19,7 @@
     docker compose version
     ```{{exec}}
 
-1. メモリが4GBである
+1. メモリが4GBである。※少し足りないが今回はぎりぎり起動するためOKとする
 
     ```bash
     grep MemTotal /proc/meminfo
