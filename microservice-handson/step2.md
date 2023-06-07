@@ -2,28 +2,25 @@
 
 <br>
 
-## 手順
+### 手順
 
-### dockerのステータスがactiveになっていることを確認する
+1. [デモリポジトリ](https://github.com/open-telemetry/opentelemetry-demo)をクローンする
 
-```bash
-systemctl status docker -n 10
-```{{exec}}
+    ```bash
+    git clone https://github.com/open-telemetry/opentelemetry-demo.git
+    ```{{exec}}
 
-### docker composeのバージョンがV2.0.0以上であることを確認する
+1. docker composeで起動する
 
-```bash
-docker compose version
-```{{exec}}
+    ```bash
+    cd opentelemetry-demo/
+    docker compose up --no-build
+    ```{{exec}}
 
-### メモリが4GBであることを確認する
+1. 起動したことを確認する
 
-```bash
-grep MemTotal /proc/meminfo
-```{{exec}}
+    ```bash
+    docker compose ps
+    ```{{exec}}
 
 コンテナがすべて起動していることが確認出来たら次へ
-
-## 補足
-
-実はkillercodaのデフォルトのUbuntuイメージではdocker composeのバージョンが古く、起動時にスクリプトでインストールしている。
