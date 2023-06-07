@@ -1,47 +1,32 @@
-otel-demoというサンプルアプリケーションを起動します。
-既に`~/otel-demo`に配置されています。
+[公式ページ](https://opentelemetry.io/docs/demo/docker-deployment/)に従ってデモを起動していきます。
+
+起動する前にまずは前提条件を満たしているか確認しましょう。
+今回はUbuntu環境ベースでコマンドを確認します。
 
 <br>
 
 ### 手順
 
-1. ディレクトリの移動
-
-      ```bash
-      cd ~/otel-demo
-      ```{{exec}}
-
-1. ビルドする
+1. dockerのステータスがactiveになっていることを確認する。
 
     ```bash
-    docker-compose build
+    systemctl staus docker -n 10
     ```{{exec}}
 
-1. サンプルアプリケーションを起動
+1. docker composeのバージョンがV2.0.0以上であることを確認する
 
     ```bash
-    docker-compose up -d
+    docker compose version
     ```{{exec}}
 
-1. すべてUpであることを確認する
+1. メモリが4GBである
 
     ```bash
-    docker-compose ps
+    grep MemTotal /proc/meminfo
     ```{{exec}}
-
-    実行結果例
-
-    ```plan
-        Name                   Command                  State       ...
-    -----------------------------------------------------------------...
-    db               docker-entrypoint.sh mysql ...   Up             ...
-    demo             java -Xmn256m -Xmx768m -ja ...   Up             ...
-    jaeger           /go/bin/all-in-one-linux         Up             ...
-    otel-collector   /otelcontribcol --config=/ ...   Up             ...
-    prometheus       /bin/prometheus --config.f ...   Up             ...
-    zipkin           start-zipkin                     Up (healthy)   ...
-    ```
-
-### 完了条件
 
 コンテナがすべて起動していることが確認出来たら次へ
+
+### 補足
+
+実はkillercodaのデフォルトのUbuntuイメージではdocker composeのバージョンが古く、起動時にスクリプトでインストールしている。
