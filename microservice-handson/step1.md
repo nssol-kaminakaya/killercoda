@@ -10,7 +10,7 @@
 1. dockerのステータスがactiveになっていることを確認する。
 
     ```bash
-    systemctl staus docker -n 10
+    systemctl status docker -n 10
     ```{{exec}}
 
 1. docker composeのバージョンがV2.0.0以上であることを確認する
