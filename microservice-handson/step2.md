@@ -7,7 +7,7 @@
 1. [デモリポジトリ](https://github.com/open-telemetry/opentelemetry-demo)をクローンする
 
     ```bash
-    git clone https://github.com/open-telemetry/opentelemetry-demo.git
+    git clone https://github.com/open-telemetry/opentelemetry-demo.git -b 1.4.0
     ```{{exec}}
 
 1. docker composeで起動する
