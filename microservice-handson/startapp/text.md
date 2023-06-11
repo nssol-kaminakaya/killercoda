@@ -26,3 +26,15 @@
     docker compose ps
     ```{{exec}}
 
+1. kafkaコンテナの起動が遅くてstatusがcreatedで止まってしまっている場合はstartを実行する
+
+    ```bash
+    docker compose start
+    ```{{exec}}
+
+1. コンテナのstatusがすべてrunningになっていることを確認して次へ
+
+    ```bash
+    docker compose ps
+    ```{{exec}}
+
