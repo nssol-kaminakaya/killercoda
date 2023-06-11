@@ -10,11 +10,11 @@
     "steps": [
       {
         "title": "前提条件を確認する",
-        "text": "step1.md"
+        "text": "requirment/text.md"
       },
       {
         "title": "デモを起動してみる",
-        "text": "step2.md"
+        "text": "startapp/text.md"
       }
     ],
     "finish": {
