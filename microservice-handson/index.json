@@ -23,6 +23,10 @@
       {
         "title": "APIを実行する",
         "text": "api/text.md"
+      },
+      {
+        "title": "負荷ツールを確認する",
+        "text": "loadgen/text.md"
       }
     ],
     "finish": {
