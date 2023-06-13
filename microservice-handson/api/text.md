@@ -39,7 +39,7 @@ const ApiGateway = () => ({
 export default ApiGateway();
 ```
 
-1. curlコマンドを用いて上記APIを実行してみる
+curlコマンドを用いてAPIを確認してみる。
 
     ```bash
     curl -X GET http://localhost:8080/api/currency | jq .
