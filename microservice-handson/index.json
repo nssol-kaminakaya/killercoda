@@ -19,6 +19,10 @@
       {
         "title": "フロントエンドへアクセスする",
         "text": "frontend/text.md"
+      },
+      {
+        "title": "APIを実行する",
+        "text": "api/text.md"
       }
     ],
     "finish": {
