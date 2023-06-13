@@ -15,6 +15,10 @@
       {
         "title": "デモを起動してみる",
         "text": "startapp/text.md"
+      },
+      {
+        "title": "フロントエンドへアクセスする",
+        "text": "frontend/text.md"
       }
     ],
     "finish": {
