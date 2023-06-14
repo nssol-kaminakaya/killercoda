@@ -2,6 +2,9 @@
 
 ### サービス一覧
 
+opentelemetry-demoでは下記のようなサービスがそれぞれAPI機能を提供している。
+サービス間のやり取りは[アーキテクチャ図](https://opentelemetry.io/docs/demo/architecture/)に記載の通りHTTPないしgRPCでやり取りしている。
+
 | サービス名 | 構成 | 説明 |
 | --- | --- | --- |
 | ad-service | Java | 与えたキーワードに応じた商品情報を返す。今は登録商品情報をランダムに返している |
@@ -16,10 +19,10 @@
 
 ### API Gateway
 
-ただし、これが別々ホスト、ポートで公開されていたら大変である。
-そのため、APIを集約するAPI Gatewayを使うケースが多い。
+上記のようにたくさんのAPIがそれぞれ別のホスト、ポートで公開されていた場合、ユーザがアクセスしてくるのは大変である。
+そのため、APIを集約するAPI Gatewayを作成するケースが多く、パブリッククラウドではサービスとして提供されている。
 
-本アプリでは、frontendで実装されている。
+opentelemetry-demoでは、frontendで実装されている。
 対応通貨一覧を出力するAPIを例に示す。
 
 ```javascript
@@ -41,9 +44,9 @@ export default ApiGateway();
 
 curlコマンドを用いてAPIを確認してみる。
 
-    ```bash
-    curl -X GET http://localhost:8080/api/currency | jq .
-    ```{{exec}}
+```
+curl -X GET http://localhost:8080/api/currency | jq .
+```{{exec}}
 
 ### 参考
 
