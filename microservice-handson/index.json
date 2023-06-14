@@ -25,6 +25,10 @@
         "text": "api/text.md"
       },
       {
+        "title": "マイクロサービスのメリット1",
+        "text": "merit1/text.md"
+      },
+      {
         "title": "負荷ツールを確認する",
         "text": "loadgen/text.md"
       },
