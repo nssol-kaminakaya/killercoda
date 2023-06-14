@@ -56,6 +56,9 @@ frontend-proxyで確認した通り/jaegerにルーティングされている�
 
 ![Jaeger トレース画面](./assets/jaeger_trace.png)
 
+Jaegerの画面でSystem Architecture > DAGを選択するとアーキテクチャ図に書いてあったようにサービスの依存関係をグラフ化してくれる。トレースを可視化するツールに本機能が備わっていることが多い。
+
+![Jaeger システムアーキテクチャ画面](./assets/jaeger_architecture.png)
 
 
 ### 番外編：GrafanaでJaegerを確認する
