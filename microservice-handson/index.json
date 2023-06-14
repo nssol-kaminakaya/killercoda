@@ -27,6 +27,10 @@
       {
         "title": "負荷ツールを確認する",
         "text": "loadgen/text.md"
+      },
+      {
+        "title": "オブザーバビリティ環境で負荷状況を確認する",
+        "text": "observability/text.md"
       }
     ],
     "finish": {
