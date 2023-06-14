@@ -7,7 +7,7 @@ opentelemetry-demoでは下記のようなサービスがそれぞれAPI機能�
 
 | サービス名 | 構成 | 説明 |
 | --- | --- | --- |
-| ad-service | Java | 与えたキーワードに応じた商品情報を返す。今は登録商品情報をランダムに返している |
+| ad-service | Java | 与えたキーワードに応じた商品情報を返す。指定しない場合はランダムな商品を返す |
 | cart-service | DotNet | カートに入れた商品リストをRedisにCREATE/DELETE/SELECTする |
 | checkout-service | Go | カートの情報から注文情報をキューに入れ、payment, shipping, emailサービスに連携する |
 | currency-service | C++ | 通貨一覧や通貨の変換を行うサービス。本来はヨーロッパ銀行など最新のレートを高速で取得することが必要などシビアなサービスであるが、そこまでは実装していない|
