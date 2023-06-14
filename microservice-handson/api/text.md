@@ -23,7 +23,9 @@ opentelemetry-demoでは下記のようなサービスがそれぞれAPI機能�
 そのため、APIを集約するAPI Gatewayを作成するケースが多く、パブリッククラウドではサービスとして提供されている。
 
 opentelemetry-demoでは、frontendで実装されている。
-対応通貨一覧を出力するAPIを例に示す。
+
+adServiceの与えられたキーワードをもとに商品一覧を出力するAPIを例に示す。
+表に記載の通りad ServiceはcontextKeysをクエリパラメータとして受け取り、関連商品があればその商品リストを、関連商品がなければランダムに商品リストを返す。
 
 ```javascript
 // file: opentelemetry-demo/src/frontend/gateways/Api.gateway.ts
@@ -31,11 +33,14 @@ const basePath = '/api';
 
 const ApiGateway = () => ({
     // 略
-    getSupportedCurrencyList() {
-        return request<string[]>({
-        url: `${basePath}/currency`,
+    listAds(contextKeys: string[]) {
+        return request<Ad[]>({
+            url: `${basePath}/data`,　// URLは/api/dataとなる
+            queryParams: {
+                contextKeys, // クエリパラメータとしてcontextKeysを受け取る
+            },
         });
-    },
+    }
     // 略
 });
 
@@ -44,8 +49,14 @@ export default ApiGateway();
 
 curlコマンドを用いてAPIを確認してみる。
 
+登録されているキーワードの場合(固定)
 ```
-curl -X GET http://localhost:8080/api/currency | jq .
+curl -X GET "http://localhost:8080/api/data?contextKeys=travel" | jq .
+```{{exec}}
+
+登録されていないキーワードの場合（ランダム）
+```
+curl -X GET "http://localhost:8080/api/data?contextKeys=test" | jq .
 ```{{exec}}
 
 ### 参考
