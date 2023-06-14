@@ -1,54 +1,23 @@
-講義で挙げたマイクロサービスのメリットの1つである、開発の容易性について説明する。
+講義で挙げたマイクロサービスのもう1つのメリットである障害の局所化について説明する。
 
-マイクロサービスは基本疎結合に作られるため、連携部分の仕様が変わらない限りほかのサービスに影響なく簡単に変更できる。
+マイクロサービスは基本疎結合に作られるため、連携していない箇所に影響はしない。
 
-ここではその一例としてad-serviceのキーワードを追加してデプロイする作業を例に挙げて説明する。
-※メリットの説明としては微妙かもしれませんがご容赦ください。。
+ここではその一例としてrecommendationサービスをダウンしてもショッピングができることを確認する
 
-1. 下記のようにコードを修正する
-
-    ```java
-    private static ImmutableListMultimap<String, Ad> createAdsMap() {
-
-        // 略
-        Ad cleaningKit =
-            Ad.newBuilder()
-                .setRedirectUrl("/product/L9ECAV7KIM")
-                .setText("Lens Cleaning Kit for sale. Buy one, get second one for free")
-                .build();
-
-        // testKitという対象商品を追加する
-        Ad testKit =
-            Ad.newBuilder()
-                .setRedirectUrl("/product/AAAAAAAAAA")
-                .setText("Test")
-                .build();
-
-        return ImmutableListMultimap.<String, Ad>builder()
-            .putAll("binoculars", binoculars)
-            .putAll("telescopes", explorerTelescope)
-            .putAll("accessories", colorImager, solarFilter, cleaningKit)
-            .putAll("assembly", opticalTube)
-            .putAll("travel", travelTelescope)
-            .putAll("test", testKit) // testKitをtestというキーワードに結び付ける
-            // Keep the books category free of ads to ensure the random code branch is tested
-            .build();
-        }
+1. recommendationサービスを停止する
     ```
-
-1. adserviceをビルドしなおす
-    ```
-    docker copmpose build adservice
+    docker compose stop recommendationservice
     ```{{exec}}
 
-1. 起動しなおす
-    - ビルドしたものだけコンテナが再作成される
-    - docker composeの仕様で依存コンポーネントすべて再作成されるが、実際はadserviceだけ再作成すればよい
+2. frontendにアクセスする
+   - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}})からアクセスする
+   - ローカルで起動している場合は<https://localhost:8080>でアクセスできる
+
+3. お買い物をしても推奨商品が提示されないだけで買い物ができることを確認する。
+
+4. 次のタスクのために再度起動する
     ```
-    docker compose up --no-build
+    docker compose start recommendationservice
     ```{{exec}}
 
-1. curlコマンドで確認する
-    ```
-    curl -X GET "http://localhost:8080/api/data?contextKeys=test" | jq .
-    ```{{exec}}
+障害は局所化される分、きちんと監視やエラーを特定していくことが必要になる。そのためのツールを次から見ていく。

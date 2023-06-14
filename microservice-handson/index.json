@@ -25,12 +25,8 @@
         "text": "api/text.md"
       },
       {
-        "title": "マイクロサービスのメリット1(デプロイの容易性)",
+        "title": "障害の局所化の確認",
         "text": "merit1/text.md"
-      },
-      {
-        "title": "マイクロサービスのメリット2(障害の局所化)",
-        "text": "merit2/text.md"
       },
       {
         "title": "負荷ツールを確認する",
@@ -43,6 +39,10 @@
       {
         "title": "feature flagサービスでエラーを発生させる",
         "text": "featureflag/text.md"
+      },
+      {
+        "title": "番外編：デプロイの容易性",
+        "text": "merit2/text.md"
       }
     ],
     "finish": {
