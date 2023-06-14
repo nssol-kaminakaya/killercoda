@@ -31,6 +31,10 @@
       {
         "title": "オブザーバビリティ環境で負荷状況を確認する",
         "text": "observability/text.md"
+      },
+      {
+        "title": "feature flagサービスでエラーを発生させる",
+        "text": "featureflag/text.md"
       }
     ],
     "finish": {
