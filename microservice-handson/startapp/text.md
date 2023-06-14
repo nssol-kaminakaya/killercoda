@@ -2,11 +2,11 @@
 前提条件を満たしたので[公式ページ](https://opentelemetry.io/docs/demo/docker-deployment/)に従ってデモを起動します。
 
 
-1. [デモリポジトリ](https://github.com/open-telemetry/opentelemetry-demo)をクローンする
+1. [デモリポジトリ](https://github.com/open-telemetry/opentelemetry-demo)をクローンする ※実施済み
 
     ```bash
     git clone https://github.com/open-telemetry/opentelemetry-demo.git -b 1.4.0
-    ```{{exec}}
+    ```
 
 1. docker composeで起動する
     - ビルドに時間がかかるため--no-buildオプションでビルドせずコンテナイメージをそのまま起動する
