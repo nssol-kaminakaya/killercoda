@@ -17,7 +17,7 @@ Feature Flag Serviceにアクセスする。
 frontend-proxyで確認した通り/featureにルーティングされている。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/feature)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/feature>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/feature>でアクセスできる
 
 ![FeatureFlag Home画面](./assets/featureflag_home.png)
 
@@ -34,7 +34,7 @@ frontend-proxyで確認した通り/featureにルーティングされている�
 前の手順同様、Jaegerにアクセスする。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/jaeger/ui)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/jaeger/ui>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/jaeger/ui>でアクセスできる
 
 エラーが発生しているトレースを検索する。
 - Service : frontend ※productcatalogserviceでもいい

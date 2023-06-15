@@ -15,7 +15,7 @@ Prometheusにアクセスする。
 通常、後述のGrafanaからアクセスするためfrontend-proxyでルーティングはされていない。そのためポート9090を直接指定してアクセスする。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_9090}})からアクセスする
-- ローカルで起動している場合は<https://localhost:9090>でアクセスできる
+- ローカルで起動している場合は<http://localhost:9090>でアクセスできる
 
 ![Prometheus画面](./assets/prometheus.png)
 
@@ -26,7 +26,7 @@ Grafanaにアクセスする。
 frontend-proxyで確認した通り/grafanaにルーティングされている。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/grafana)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/grafana>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/grafana>でアクセスできる
 
 ![Grafana Home画面](./assets/grafana_home.png)
 
@@ -47,7 +47,7 @@ Jaegerにアクセスする。
 frontend-proxyで確認した通り/jaegerにルーティングされている。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/jaeger/ui)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/jaeger/ui>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/jaeger/ui>でアクセスできる
 
 ![Jaeger Home画面](./assets/jaeger_home.png)
 
