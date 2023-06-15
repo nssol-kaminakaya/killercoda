@@ -36,14 +36,14 @@
         }
     ```
 
-1. adserviceをビルドしなおす
+1. ad-serviceをビルドしなおす
     ```
     docker compose build adservice
     ```{{exec}}
 
 1. 起動しなおす
     - ビルドしたものだけコンテナが再作成される
-    - docker composeの仕様で依存コンポーネントすべて再作成されるが、実際はadserviceだけ再作成すればよい
+    - docker composeの仕様で依存コンポーネントすべて再作成されるが、実際はad-serviceだけ再作成すればよい
     ```
     docker compose up --no-build -d
     ```{{exec}}

@@ -4,10 +4,10 @@ opentelemetry-demoではfeature flagサービスでエラーを発生させる�
 
 | Feature Flag | サービス | 説明 |
 | ---- | ---- | ---- |
-| adServiceFailure | Ad Servcie | 10分の1の確率でGetAdsのリクエストがエラーになる。|
-| cartServiceFailure | Cart Service | 10分の1の確率でEmptyCartのリクエストがエラーになる |
-| productCatalogFailure | Prodcut Catalog | product idがOLJCESPC7Zに関するGetProductが必ずエラーになる |
-| recommendationCache | Recoomendation | キャッシュの増大に伴いメモリリークが発生する |
+| adServiceFailure | ad-servcie | 10分の1の確率でGetAdsのリクエストがエラーになる。|
+| cartServiceFailure | cart-service | 10分の1の確率でEmptyCartのリクエストがエラーになる |
+| productCatalogFailure | product-catalog-service | product idがOLJCESPC7Zに関するGetProductが必ずエラーになる |
+| recommendationCache | recommendation-service | キャッシュの増大に伴いメモリリークが発生する |
 
 参照：[公式サイト](https://opentelemetry.io/docs/demo/feature-flags/)
 
