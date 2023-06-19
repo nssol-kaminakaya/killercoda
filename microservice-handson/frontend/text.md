@@ -6,7 +6,7 @@
 
 ポート情報は環境変数にて設定されている
 ```env
-// file: opentelemetry-demo.env
+// file: opentelemetry-demo/.env
 
 # Frontend
 FRONTEND_PORT=8080
