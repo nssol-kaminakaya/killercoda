@@ -4,10 +4,10 @@ opentelemetry-demoではfeature flagサービスでエラーを発生させる�
 
 | Feature Flag | サービス | 説明 |
 | ---- | ---- | ---- |
-| adServiceFailure | Ad Servcie | 10分の1の確率でGetAdsのリクエストがエラーになる。|
-| cartServiceFailure | Cart Service | 10分の1の確率でEmptyCartのリクエストがエラーになる |
-| productCatalogFailure | Prodcut Catalog | product idがOLJCESPC7Zに関するGetProductが必ずエラーになる |
-| recommendationCache | Recoomendation | キャッシュの増大に伴いメモリリークが発生する |
+| adServiceFailure | ad-servcie | 10分の1の確率でGetAdsのリクエストがエラーになる。|
+| cartServiceFailure | cart-service | 10分の1の確率でEmptyCartのリクエストがエラーになる |
+| productCatalogFailure | product-catalog-service | product idがOLJCESPC7Zに関するGetProductが必ずエラーになる |
+| recommendationCache | recommendation-service | キャッシュの増大に伴いメモリリークが発生する |
 
 参照：[公式サイト](https://opentelemetry.io/docs/demo/feature-flags/)
 
@@ -17,7 +17,7 @@ Feature Flag Serviceにアクセスする。
 frontend-proxyで確認した通り/featureにルーティングされている。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/feature)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/feature>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/feature>でアクセスできる
 
 ![FeatureFlag Home画面](./assets/featureflag_home.png)
 
@@ -34,7 +34,7 @@ frontend-proxyで確認した通り/featureにルーティングされている�
 前の手順同様、Jaegerにアクセスする。
 
 - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/jaeger/ui)からアクセスする
-- ローカルで起動している場合は<https://localhost:8080/jaeger/ui>でアクセスできる
+- ローカルで起動している場合は<http://localhost:8080/jaeger/ui>でアクセスできる
 
 エラーが発生しているトレースを検索する。
 - Service : frontend ※productcatalogserviceでもいい

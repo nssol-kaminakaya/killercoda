@@ -6,7 +6,7 @@
 1. dockerのステータスがactiveになっていることを確認する。
 
     ```bash
-    systemctl status docker -n 1
+    systemctl status docker -n 1 --no-pager
     ```{{exec}}
 
 1. docker composeのバージョンがV2.0.0以上であることを確認する
