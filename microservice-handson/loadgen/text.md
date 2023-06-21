@@ -51,7 +51,7 @@ LOCUST_HEADLESS=false
 
 1. Locustにアクセスする。frontend-proxyで確認した通り/loadgen/でルーティングされる。
    - Killercodaでは[こちら]({{TRAFFIC_HOST1_8080}}/loadgen/)からアクセスする
-   - ローカルで起動している場合は<https://localhost:8080/loadgen/>でアクセスできる
+   - ローカルで起動している場合は<http://localhost:8080/loadgen/>でアクセスできる
 
 1. 下記画面が表示される
    - 右上のボタンで負荷の停止/再開をすることが可能

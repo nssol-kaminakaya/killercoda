@@ -24,8 +24,8 @@ opentelemetry-demoでは下記のようなサービスがそれぞれAPI機能�
 
 opentelemetry-demoでは、frontendで実装されている。
 
-adServiceの与えられたキーワードをもとに商品一覧を出力するAPIを例に示す。
-表に記載の通りad ServiceはcontextKeysをクエリパラメータとして受け取り、関連商品があればその商品リストを、関連商品がなければランダムに商品リストを返す。
+ad-serviceの与えられたキーワードをもとに商品一覧を出力するAPIを例に示す。
+表に記載の通りad-serviceはcontextKeysをクエリパラメータとして受け取り、関連商品があればその商品リストを、関連商品がなければランダムに商品リストを返す。
 
 ```javascript
 // file: opentelemetry-demo/src/frontend/gateways/Api.gateway.ts
