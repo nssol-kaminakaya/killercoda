@@ -1,4 +1,4 @@
-前の手順で確認した負荷をオブザーバビリティツールを使って確認する。
+本シナリオでは負荷情報やエラー情報を可視化するオブザーバビリティツールを触ってみる。
 opentelemetry-demoでは下記環境が用意されている。
 
 | プロダクト | 説明 |
@@ -35,8 +35,8 @@ frontend-proxyで確認した通り/grafanaにルーティングされている�
 
 ![Grafana Dashboard一覧画面](./assets/grafana_dashboard.png)
 
-Demo Dashboardを開き、適当なサービスを選択するとメトリクスが取れていることがわかる。
-※この場合CPUなどのインフラ情報はとれていない模様
+Demo DashboardやSpanmetrics Demo Dashboardを開くとCPU使用率などのメトリクスが取れていることがわかる。
+※Killercodaの環境ではサービスが指定できない。おそらく環境起因。
 
 ![Grafana Demo Dashboard](./assets/grafana_demo_dashboard.png)
 

@@ -29,11 +29,7 @@
         "text": "merit1/text.md"
       },
       {
-        "title": "負荷ツールを確認する",
-        "text": "loadgen/text.md"
-      },
-      {
-        "title": "オブザーバビリティ環境で負荷状況を確認する",
+        "title": "オブザーバビリティ環境を確認する",
         "text": "observability/text.md"
       },
       {
@@ -41,8 +37,12 @@
         "text": "featureflag/text.md"
       },
       {
-        "title": "番外編：デプロイの容易性",
+        "title": "番外編1：デプロイの容易性",
         "text": "merit2/text.md"
+      },
+      {
+        "title": "番外編2：負荷ツールを確認する",
+        "text": "loadgen/text.md"
       }
     ],
     "finish": {
